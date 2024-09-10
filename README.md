@@ -1,2 +1,2 @@
-# maven-samples
-Sample project for maven build
+# maven-build-test
+Sample Repo for Maven project
