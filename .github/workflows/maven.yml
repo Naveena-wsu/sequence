@@ -1,4 +1,4 @@
-name: Build and deploy
+name: My Workflow
 
 on:
   push:
@@ -6,29 +6,23 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  build-1:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Build and package
+      - name: Run build 1
         run: |
-          mvn clean package
+          echo "Running build 1"
+          # Your build commands here
 
-      - name: Deploy to GitHub Packages
-        uses: actions/upload-artifact@v2
-        with:
-          name:single-module
-          path: target/single-module-project.jar
-
-  deploy-to-production:
-    needs: build-and-deploy
+  build-2:
+    needs: build-1
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Deploy to production
+      - name: Run build 2
         run: |
-          # deployment script
+          echo "Running build 2"
+          # Your build commands here
