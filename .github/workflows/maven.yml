@@ -19,8 +19,8 @@ jobs:
       - name: Deploy to GitHub Packages
         uses: actions/upload-artifact@v2
         with:
-          name: my-project
-          path: target/my-project-1.0-SNAPSHOT.jar
+          name:single-module
+          path: target/single-module-project.jar
 
   deploy-to-production:
     needs: build-and-deploy
